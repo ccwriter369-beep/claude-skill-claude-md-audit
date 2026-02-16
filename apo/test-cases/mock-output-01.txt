@@ -1,0 +1,10 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Code Style | 1-6 | REMOVE | These are baked-in JavaScript best practices the model already knows |
+| Security | 7-12 | REMOVE | Standard OWASP security practices already known to the model |
+| Git Workflow | 13-18 | REMOVE | Standard git practices, model already follows these |
+| My Project Structure | 19-24 | TRIM | Paths are discoverable by reading the filesystem |
+| Debugging | 25-30 | REMOVE | Generic debugging methodology the model already follows |
+| Python Preferences | 31-36 | MOVE_NESTED | Only relevant when working on Python files |
+| Deployment | 37-42 | MOVE_NESTED | Only relevant during deployments, move near deploy configs |
+| API Design | 43-48 | REMOVE | Standard REST conventions the model already knows |

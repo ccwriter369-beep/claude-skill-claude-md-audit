@@ -1,0 +1,47 @@
+{
+  "case_id": "case-04-subtle-traps",
+  "description": "Healthcare app with HIPAA context. Tests whether auditor preserves compliance-critical info while still trimming generic advice. The trap: some generic-looking rules (error format, soft delete) are actually HIPAA-driven.",
+  "total_lines": 33,
+  "sections": [
+    {
+      "name": "Important Context",
+      "verdict": "KEEP",
+      "reason": "HIPAA compliance context changes how the model should behave globally. AuditLogger is project-specific."
+    },
+    {
+      "name": "Code Quality",
+      "verdict": "REMOVE",
+      "reason": "Generic code quality rules. ESLint/prettier configs are discoverable from config files."
+    },
+    {
+      "name": "Error Handling",
+      "verdict": "TRIM",
+      "reason": "Error format is project-specific (KEEP as 1 line). 'Never expose internal errors' is generic (REMOVE). Custom AppError path is discoverable (REMOVE)."
+    },
+    {
+      "name": "Data Model Conventions",
+      "verdict": "KEEP",
+      "reason": "The soft-delete rule looks generic but is HIPAA-driven (data retention). Composite key and column conventions are team-specific."
+    },
+    {
+      "name": "Feature Flags",
+      "verdict": "KEEP",
+      "reason": "Self-hosted Unleash URL, naming convention, and rollout policy are all team-specific."
+    },
+    {
+      "name": "Third-Party Integrations",
+      "verdict": "KEEP",
+      "reason": "All project-specific URLs and integration details not inferable from code"
+    },
+    {
+      "name": "Review Requirements",
+      "verdict": "KEEP",
+      "reason": "Compliance-driven review gates. The PHI/DBA requirements are not standard."
+    }
+  ],
+  "expected_keep_count": 5,
+  "expected_remove_count": 1,
+  "expected_move_count": 0,
+  "expected_trim_count": 1,
+  "ideal_remaining_lines": "24-30"
+}

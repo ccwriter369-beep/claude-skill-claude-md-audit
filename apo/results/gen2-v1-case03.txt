@@ -1,0 +1,6 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Monorepo Layout | 3-4 | KEEP | Non-obvious architectural constraint specific to this team's organization |
+| Auth | 6-7 | KEEP | External integration context: specific auth.myco.io endpoint and HttpOnly cookie strategy |
+| Forbidden Actions | 9-12 | MOVE_HOOK | Hard NEVER/ALWAYS rules belong in PreToolUse hooks |
+| Styling | 14-15 | KEEP | Team-specific tooling decision with custom theme location and design tokens path |

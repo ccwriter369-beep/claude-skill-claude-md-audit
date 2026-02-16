@@ -1,0 +1,9 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Important Context | 3-7 | KEEP | HIPAA compliance context; encryption and PHI handling are compliance requirements |
+| Code Quality | 9-14 | TRIM | Mixed: ESLint/prettier are discoverable in config. Generic patterns model knows. |
+| Error Handling | 16-20 | TRIM | Mixed: "Never expose errors" is generic. Keep API error format and AppError class. |
+| Data Model Conventions | 22-26 | TRIM | Mixed: UUID/timestamp generic. Keep soft-delete (HIPAA retention), composite key. |
+| Feature Flags | 28-31 | KEEP | Unleash URL, naming convention, rollout policy are non-discoverable team context |
+| Third-Party Integrations | 33-36 | KEEP | External API endpoints not discoverable |
+| Review Requirements | 38-41 | KEEP | Compliance-driven review processes (PHI security, DBA approval) |

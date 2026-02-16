@@ -1,0 +1,7 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Absolute Rules | 3-9 | MOVE_HOOK | Hard constraints ("NEVER", "ALWAYS") that must be enforced reliably; CLAUDE.md instructions can be forgotten mid-session. These are perfect candidates for PreToolUse hooks. |
+| Architecture | 11-15 | MOVE_NESTED | Domain-specific microservices architecture patterns only relevant when working with this specific codebase; should be in a nested CLAUDE.md at project root or src/ directory. |
+| Naming | 17-21 | MOVE_NESTED | Project-specific naming conventions discoverable from reading existing code patterns; belongs in nested CLAUDE.md near service definitions. |
+| Monitoring | 23-27 | MOVE_NESTED | Domain-specific observability requirements only relevant when implementing services; should be nested CLAUDE.md near infrastructure/monitoring code. |
+| DO NOT TOUCH | 29-33 | KEEP | Critical safety constraint specific to this project's build system; auto-generated paths vary by project and must be preserved. |

@@ -1,0 +1,37 @@
+{
+  "case_id": "case-05-hook-candidates",
+  "description": "Heavy on NEVER/ALWAYS rules that should be hooks. Tests hook detection capability.",
+  "total_lines": 28,
+  "sections": [
+    {
+      "name": "Absolute Rules",
+      "verdict": "MOVE_HOOK",
+      "reason": "Every rule here is a hard constraint. rm -rf, push to main, vendor modifications, sudo — all should be PreToolUse hooks for guaranteed enforcement."
+    },
+    {
+      "name": "Architecture",
+      "verdict": "KEEP",
+      "reason": "Team-specific architecture with specific URLs and patterns not inferable from code"
+    },
+    {
+      "name": "Naming",
+      "verdict": "KEEP",
+      "reason": "Team-specific naming conventions. Discoverable by reading code but explicit convention prevents drift."
+    },
+    {
+      "name": "Monitoring",
+      "verdict": "TRIM",
+      "reason": "Health/ready endpoints and Prometheus are standard (remove). Correlation ID propagation pattern is team-specific (keep 1 line)."
+    },
+    {
+      "name": "DO NOT TOUCH",
+      "verdict": "MOVE_HOOK",
+      "reason": "Should be a PreToolUse hook blocking Edit/Write on these paths. Instructions can be forgotten; hooks cannot."
+    }
+  ],
+  "expected_keep_count": 2,
+  "expected_remove_count": 0,
+  "expected_move_count": 2,
+  "expected_trim_count": 1,
+  "ideal_remaining_lines": "12-18"
+}

@@ -1,0 +1,9 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Team Convention: Branch Naming | 3-6 | KEEP | Strategic team knowledge (JIRA key "ACME", naming pattern) not discoverable from code |
+| Never Modify Legacy API | 8-11 | MOVE_HOOK | Hard NEVER rule + PCI DSS compliance boundary - belongs in PreToolUse hook |
+| Database | 13-17 | REMOVE | Generic database best practices model already knows |
+| Testing | 19-23 | REMOVE | Generic testing practices model already knows |
+| Secrets Management | 25-28 | KEEP | Specific AWS Secrets Manager pattern with access command + hard NEVERs |
+| Internal Services | 30-34 | KEEP | Internal URLs and service names not in config - essential integration context |
+| Performance | 36-40 | REMOVE | Generic performance optimization techniques model already knows |

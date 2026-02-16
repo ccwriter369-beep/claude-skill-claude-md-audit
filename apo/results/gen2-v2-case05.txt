@@ -1,0 +1,7 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Absolute Rules | 3-8 | MOVE_HOOK | Hard NEVER/ALWAYS constraints should be PreToolUse hooks |
+| Architecture | 11-15 | KEEP | Non-obvious constraints with specific internal URLs (amqp://mq.internal:5672) |
+| Naming | 17-21 | KEEP | Team-specific naming conventions, organizational knowledge |
+| Monitoring | 23-27 | TRIM | Keep correlation ID and metrics port, remove generic health endpoint mention |
+| DO NOT TOUCH | 29-33 | MOVE_HOOK | File protection rules should be PreToolUse hooks |

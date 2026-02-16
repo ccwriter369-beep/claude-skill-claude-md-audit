@@ -1,0 +1,10 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Code Style | 3-8 | REMOVE | Generic best practices model already knows, not team-specific |
+| Security | 10-15 | REMOVE | Generic security principles, no compliance keywords or team-specific constraints |
+| Git Workflow | 17-22 | REMOVE | Generic Git practices already in model's knowledge base |
+| My Project Structure | 24-29 | TRIM | Discoverable via ls; not strategic team knowledge in this low-curation file |
+| Debugging | 31-36 | REMOVE | Generic debugging methodology covered by model training |
+| Python Preferences | 38-43 | MOVE_NESTED | Domain-specific tooling choices (black, ruff) belong in Python-specific CLAUDE.md |
+| Deployment | 45-50 | REMOVE | Generic deployment principles without specific internal URLs or compliance context |
+| API Design | 52-57 | REMOVE | Generic REST conventions, industry standards not team-specific |

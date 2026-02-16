@@ -1,0 +1,10 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Code Style | 3-8 | REMOVE | Best practices already baked into model; const/arrow functions/async-await/template literals/semicolons are standard modern JavaScript patterns the model knows natively |
+| Security | 10-15 | REMOVE | Generic security advice the model handles automatically; no project-specific URLs, credentials, or compliance rules present |
+| Git Workflow | 17-22 | MOVE_HOOK | "Never force push to main" and "Run tests before committing" are hard constraints that should be hooks; other items are generic best practices the model knows |
+| My Project Structure | 24-29 | KEEP | Project-specific directory layout not discoverable without explicit instruction; prevents drift if this is a team convention |
+| Debugging | 31-36 | REMOVE | Generic methodology the model already knows; no project-specific debugging tools or patterns |
+| Python Preferences | 38-43 | MOVE_NESTED | Only relevant when working with Python; should live in a nested CLAUDE.md near Python code |
+| Deployment | 45-50 | TRIM | Generic deployment practices except "Never deploy on Fridays" which is project-specific; reduce to 1-2 lines |
+| API Design | 52-57 | MOVE_NESTED | REST conventions with /v1/ prefix may be project-specific; move to /src/api/CLAUDE.md |

@@ -1,0 +1,9 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Team Convention: Branch Naming | 3-6 | MOVE_NESTED | Team-wide convention but no URLs/credentials; only relevant when working with git/CI |
+| Never Modify Legacy API | 8-11 | MOVE_HOOK | Hard constraint ("NEVER modify"); PCI-DSS compliance requirement should be enforced via PreToolUse hook |
+| Database | 13-17 | TRIM | Generic best practices model already knows; PostgreSQL 15 version is discoverable from code |
+| Testing | 19-23 | REMOVE | Generic testing best practices model already knows |
+| Secrets Management | 25-28 | KEEP | Contains specific URLs/endpoints (AWS Secrets Manager region us-east-1, secret naming pattern) not in codebase |
+| Internal Services | 30-34 | KEEP | Contains URLs not in codebase (auth.internal.acme.com, LaunchDarkly project ID, Sentry DSN reference) |
+| Performance | 36-40 | REMOVE | Generic optimization advice model already knows |

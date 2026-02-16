@@ -1,0 +1,52 @@
+{
+  "case_id": "case-01-bloated-generic",
+  "description": "Heavily bloated file. Almost everything is baked-in model knowledge or generic best practices.",
+  "total_lines": 48,
+  "sections": [
+    {
+      "name": "Code Style",
+      "verdict": "REMOVE",
+      "reason": "All items are baked-in JavaScript best practices the model already knows"
+    },
+    {
+      "name": "Security",
+      "verdict": "REMOVE",
+      "reason": "Standard OWASP practices the model already knows"
+    },
+    {
+      "name": "Git Workflow",
+      "verdict": "REMOVE",
+      "reason": "Standard git practices, most already enforced by Claude Code defaults"
+    },
+    {
+      "name": "My Project Structure",
+      "verdict": "TRIM",
+      "reason": "Discoverable by reading the filesystem. Could be a single line pointer or removed entirely."
+    },
+    {
+      "name": "Debugging",
+      "verdict": "REMOVE",
+      "reason": "Generic debugging methodology the model already follows"
+    },
+    {
+      "name": "Python Preferences",
+      "verdict": "MOVE_NESTED",
+      "reason": "Only relevant when working on Python files. Should be in a nested CLAUDE.md near Python code."
+    },
+    {
+      "name": "Deployment",
+      "verdict": "MOVE_NESTED",
+      "reason": "Only relevant during deployments. Move near deploy configs or as a hook for critical rules."
+    },
+    {
+      "name": "API Design",
+      "verdict": "REMOVE",
+      "reason": "Standard REST conventions the model already knows"
+    }
+  ],
+  "expected_keep_count": 0,
+  "expected_remove_count": 5,
+  "expected_move_count": 2,
+  "expected_trim_count": 1,
+  "ideal_remaining_lines": "0-5"
+}

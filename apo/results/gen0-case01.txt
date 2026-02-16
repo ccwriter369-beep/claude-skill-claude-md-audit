@@ -1,0 +1,10 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Code Style | 3-8 | REMOVE | Baked-in model knowledge; best practices for const, arrow functions, async/await, template literals, and semicolons are standard behavior |
+| Security | 10-15 | REMOVE | Standard security practices the model already knows; stack trace exposure, input sanitization, HTTPS, bcrypt, JWT validation are foundational |
+| Git Workflow | 17-22 | MOVE_HOOK | Hard constraints ("Never force push to main", "Run tests before committing") belong in PreToolUse hooks, not instructions |
+| My Project Structure | 24-29 | TRIM | File paths are discoverable by reading the filesystem; replace with pointer to project layout or remove entirely |
+| Debugging | 31-36 | REMOVE | Standard debugging methodology the model already knows; reading error messages, checking logs, reproducing issues are native practices |
+| Python Preferences | 38-43 | MOVE_NESTED | Domain-specific Python guidance (type hints, pathlib, dataclasses, black/ruff) should live in nested CLAUDE.md near Python files |
+| Deployment | 45-50 | MOVE_NESTED | Deployment rules (run migrations, monitor health, error thresholds, no Friday deploys) belong in nested CLAUDE.md near /infra/terraform/ or deployment scripts |
+| API Design | 52-57 | MOVE_NESTED | API conventions (REST, status codes, pagination, versioning, OpenAPI) should live in nested CLAUDE.md near API implementation files |

@@ -1,0 +1,9 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Important Context | 3-7 | KEEP | Compliance-driven (HIPAA). Encryption, PHI in logs, audit trail are critical compliance requirements |
+| Code Quality | 9-14 | REMOVE | All items discoverable in config files (.eslintrc, prettier, tsconfig) or standard industry practices |
+| Error Handling | 16-20 | KEEP | Specific internal conventions (error response format with requestId, AppError class, CloudWatch logging) |
+| Data Model Conventions | 22-26 | KEEP | Compliance-driven: soft delete "HIPAA requires data retention", composite key pattern, UTC timestamps |
+| Feature Flags | 28-31 | KEEP | Internal service URL (flags.internal.healthco.net), team-specific naming convention, rollout strategy |
+| Third-Party Integrations | 33-36 | KEEP | External API endpoints (HL7 FHIR, Availity, Surescripts) and internal adapter locations |
+| Review Requirements | 38-41 | KEEP | Compliance-driven review processes (PHI security review, DBA approval) |

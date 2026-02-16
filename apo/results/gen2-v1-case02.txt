@@ -1,0 +1,9 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Team Convention: Branch Naming | 3-6 | KEEP | Team-specific JIRA convention with internal project key "ACME" |
+| Never Modify Legacy API | 8-11 | MOVE_HOOK | Hard NEVER rule with PCI DSS compliance boundary |
+| Database | 13-17 | TRIM | Mixed: "PostgreSQL 15" is team-specific; transaction/index advice is generic |
+| Testing | 19-23 | TRIM | Mixed: "Jest/pytest" is team tooling choice; generic testing advice is model knowledge |
+| Secrets Management | 25-28 | TRIM | Mixed: AWS access pattern is team-specific; "NEVER hardcode" is model knowledge |
+| Internal Services | 30-34 | KEEP | Team-specific URLs and service names not discoverable from code |
+| Performance | 36-40 | REMOVE | Generic best practices model already knows |

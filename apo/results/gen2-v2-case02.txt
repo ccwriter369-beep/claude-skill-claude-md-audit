@@ -1,0 +1,9 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Team Convention: Branch Naming | 3-6 | KEEP | Team-specific naming convention with JIRA project key "ACME" |
+| Never Modify Legacy API | 8-11 | KEEP | Hard constraint with PCI DSS compliance driver |
+| Database | 13-17 | TRIM | Mix of generic and specific (PostgreSQL 15). Remove generic database principles. |
+| Testing | 19-23 | REMOVE | Generic best practices, tool choices are generic not team-specific |
+| Secrets Management | 25-28 | KEEP | Specific AWS region, access pattern, internal infrastructure knowledge |
+| Internal Services | 30-34 | KEEP | Internal URLs, LaunchDarkly project, CI location - not discoverable from code |
+| Performance | 36-40 | REMOVE | Generic web performance best practices |

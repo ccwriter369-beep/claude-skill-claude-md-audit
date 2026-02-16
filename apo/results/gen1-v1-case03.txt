@@ -1,0 +1,6 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Monorepo Layout | 3-4 | KEEP | Project structure convention that prevents drift; prevents need for repeated nested CLAUDE.md files across packages |
+| Auth | 6-7 | KEEP | Contains external service URL (auth.myco.io) and credential policy not stored in codebase (HttpOnly cookie requirement) |
+| Forbidden Actions | 9-12 | MOVE_HOOK | Hard constraints ("NEVER") that must not be forgotten; suitable for PreToolUse hooks to block dangerous operations |
+| Styling | 14-15 | MOVE_NESTED | Domain-specific (Tailwind/design tokens); only relevant when working with UI/styling; configuration details discoverable from config files |

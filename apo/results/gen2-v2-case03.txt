@@ -1,0 +1,6 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Monorepo Layout | 3-4 | TRIM | Discoverable via ls; turborepo is generic best practice |
+| Auth | 6-7 | KEEP | Bearer token from specific internal endpoint (auth.myco.io), HttpOnly cookie strategy |
+| Forbidden Actions | 9-12 | MOVE_HOOK | Three hard NEVER rules should be PreToolUse hooks |
+| Styling | 14-15 | KEEP | Specific tooling choice + team-specific customization path (tailwind.config.ts, packages/ui/tokens/) |

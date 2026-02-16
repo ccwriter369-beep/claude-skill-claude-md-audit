@@ -1,0 +1,9 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Important Context | 3-7 | KEEP | Compliance-driven rule: HIPAA soft-delete and audit trail requirements are legally mandated, not generic advice. AuditLogger reference is project-specific. |
+| Code Quality | 9-14 | TRIM | Model already knows these practices. ESLint/Prettier discoverable from config files. |
+| Error Handling | 16-20 | KEEP | Team-wide convention: Specific API response format {error, code, requestId} and mandatory AppError class usage are non-obvious project policies. |
+| Data Model Conventions | 22-26 | KEEP | Compliance + team-wide: HIPAA-mandated soft-delete pattern with deleted_at, composite key rule for patient records, regulatory constraints. |
+| Feature Flags | 28-31 | KEEP | Contains URL not in codebase: https://flags.internal.healthco.net. Gradual rollout rule is team-wide convention. |
+| Third-Party Integrations | 33-36 | KEEP | Contains URLs not in codebase: HL7 FHIR API endpoint, Availity credentials reference, NewCrop adapter path. |
+| Review Requirements | 38-41 | MOVE_HOOK | PRs require 2 approvals, PHI-touching code requires security review — hard constraints that should be hooks. |

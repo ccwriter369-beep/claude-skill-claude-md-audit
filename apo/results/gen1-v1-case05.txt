@@ -1,0 +1,7 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Absolute Rules | 3-8 | MOVE_HOOK | Hard constraints ("NEVER", "ALWAYS") that must not be forgotten mid-session |
+| Architecture | 11-15 | KEEP | Contains internal service URLs (amqp://mq.internal:5672) and non-obvious microservices layout not stored in codebase |
+| Naming | 17-21 | KEEP | Team-wide naming conventions spanning services, queues, tables, and API routes. Prevents drift across subprojects |
+| Monitoring | 23-27 | KEEP | Compliance-driven instrumentation pattern with specific technical details required across all services |
+| DO NOT TOUCH | 29-33 | MOVE_HOOK | Hard constraint protecting auto-generated files. Should be PreToolUse hook matching Edit/Write to src/generated/**, proto/compiled/** |

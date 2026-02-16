@@ -1,0 +1,10 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Code Style | 3-8 | REMOVE | Generic coding conventions baked into model knowledge |
+| Security | 10-15 | REMOVE | Generic security practices, not team-specific compliance rules |
+| Git Workflow | 17-22 | REMOVE | Generic git practices, not team conventions |
+| My Project Structure | 24-29 | KEEP | Team-specific directory organization cannot be discovered from code alone |
+| Debugging | 31-36 | REMOVE | Generic debugging methodology is standard practice |
+| Python Preferences | 38-43 | MOVE_NESTED | Domain-specific tooling choices (black, ruff) for Python, move to nested CLAUDE.md |
+| Deployment | 45-50 | TRIM | Mixed: keep "Never deploy on Fridays" (team convention), remove generic deployment steps |
+| API Design | 52-57 | TRIM | Mixed: keep "/v1/ prefix" (team decision), remove generic REST conventions |

@@ -1,0 +1,6 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Monorepo Layout | 3-4 | TRIM | Discoverable from filesystem (directory structure and package.json files are self-documenting) |
+| Auth | 6-7 | KEEP | Team-specific policy on token storage and refresh mechanism; non-obvious and critical for security |
+| Forbidden Actions | 9-12 | MOVE_HOOK | Hard constraints ("NEVER delete", "NEVER merge", "NEVER expose") are 100% reliable only as hooks; CLAUDE.md instructions can be forgotten mid-session |
+| Styling | 14-15 | MOVE_NESTED | Domain-specific (Tailwind/design tokens); only relevant when working with UI components; should load near tailwind.config.ts and packages/ui/ |

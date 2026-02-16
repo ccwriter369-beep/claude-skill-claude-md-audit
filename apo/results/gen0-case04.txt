@@ -1,0 +1,9 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Important Context | 3-7 | KEEP | Hard compliance requirement. HIPAA violations have legal consequences. Not generic security advice; specific to this healthcare codebase. |
+| Code Quality | 9-14 | TRIM | ESLint/Prettier/composition are known best practices. "No any types" is TypeScript standard knowledge. Can be enforced via .eslintrc config (discoverable). |
+| Error Handling | 16-20 | MOVE_NESTED | Error handling patterns should live in src/lib/errors.ts or error handling guide. Standard practice discoverable from codebase. |
+| Data Model Conventions | 22-26 | MOVE_NESTED | Database schema patterns belong in a CLAUDE.md next to migrations or schema definitions. UUID, timestamps, soft deletes discoverable from schema files. |
+| Feature Flags | 28-31 | KEEP | Team-specific integration details (Unleash URL, rollout percentages, naming convention). Not discoverable. |
+| Third-Party Integrations | 33-36 | TRIM | API endpoints and credential locations discoverable from config files, .env.example, or Vault documentation. |
+| Review Requirements | 38-41 | KEEP | Team-specific governance: 2-approval rule, security team checkpoint, DBA approval. Org policies that can't be inferred. |

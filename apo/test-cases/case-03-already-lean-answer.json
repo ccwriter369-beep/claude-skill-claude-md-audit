@@ -1,0 +1,32 @@
+{
+  "case_id": "case-03-already-lean",
+  "description": "Well-written file that's already concise. Tests whether the audit correctly identifies it as mostly good.",
+  "total_lines": 13,
+  "sections": [
+    {
+      "name": "Monorepo Layout",
+      "verdict": "KEEP",
+      "reason": "Concise, non-obvious project structure info"
+    },
+    {
+      "name": "Auth",
+      "verdict": "KEEP",
+      "reason": "Specific auth architecture decisions not inferable from code"
+    },
+    {
+      "name": "Forbidden Actions",
+      "verdict": "MOVE_HOOK",
+      "reason": "Hard NEVER constraints should be hooks for guaranteed enforcement"
+    },
+    {
+      "name": "Styling",
+      "verdict": "KEEP",
+      "reason": "Team-specific tooling choices with specific file paths"
+    }
+  ],
+  "expected_keep_count": 3,
+  "expected_remove_count": 0,
+  "expected_move_count": 1,
+  "expected_trim_count": 0,
+  "ideal_remaining_lines": "8-13"
+}

@@ -1,0 +1,7 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Absolute Rules | 3-9 | MOVE_HOOK | Hard NEVER/ALWAYS constraints should be enforced via PreToolUse hooks |
+| Architecture | 11-15 | KEEP | Non-obvious architectural constraints with specific URLs/ports (RabbitMQ amqp://mq.internal:5672) |
+| Naming | 17-21 | KEEP | Team-specific naming conventions not discoverable in code |
+| Monitoring | 23-27 | TRIM | Mixed: keep specifics (port 9090, correlation ID header), remove generic "expose health endpoints" |
+| DO NOT TOUCH | 29-33 | MOVE_HOOK | File protection rules belong in PreToolUse hooks |

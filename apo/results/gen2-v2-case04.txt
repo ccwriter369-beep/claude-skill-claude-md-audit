@@ -1,0 +1,9 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Important Context | 3-7 | KEEP | HIPAA compliance keywords, audit trail requirements, hard legal constraints |
+| Code Quality | 9-14 | REMOVE | Generic best practices discoverable in config files |
+| Error Handling | 16-20 | TRIM | Mixed: Keep error format and AppError class, remove generic advice |
+| Data Model Conventions | 22-26 | KEEP | Compliance-driven: soft delete references HIPAA data retention, composite key is team-specific |
+| Feature Flags | 28-31 | KEEP | Internal URL, specific naming convention, cannot be discovered from code |
+| Third-Party Integrations | 33-36 | KEEP | Specific URLs, API versions, Vault references, internal paths |
+| Review Requirements | 38-41 | TRIM | Mixed: Keep PHI review and DBA approval (compliance), remove generic 2-approval count |

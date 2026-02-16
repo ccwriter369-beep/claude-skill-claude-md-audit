@@ -1,0 +1,9 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Team Convention: Branch Naming | 3-6 | KEEP | Team-specific workflow convention (JIRA project key "ACME", branch naming pattern) is non-obvious and must be followed to maintain consistency |
+| Never Modify Legacy API | 8-11 | MOVE_HOOK | Hard constraint with compliance implications ("NEVER modify", "PCI DSS scope boundary") — this is a critical rule that should be a PreToolUse hook to block edits to src/payments/v1/ paths |
+| Database | 13-17 | TRIM | Generic best practices (PostgreSQL 15, transactions, indexing, EXPLAIN ANALYZE) are baked into model training; replace with 1-2 lines pointing to project standards or discoverable config |
+| Testing | 19-23 | REMOVE | Standard testing practices (unit tests, Jest/pytest, mocking, coverage targets) are baseline model knowledge and in framework documentation |
+| Secrets Management | 25-28 | KEEP | Team-specific infrastructure detail (AWS Secrets Manager, region us-east-1, access pattern, specific constraints about hardcoding/commits) that model cannot infer |
+| Internal Services | 30-34 | TRIM | Service URLs and integrations are discoverable from config files, docs, or codebase; replace with pointer to central registry or config file location |
+| Performance | 36-40 | REMOVE | Web performance optimization basics (lazy loading, code splitting, compression, caching) are standard model knowledge; discoverable from Next.js/framework docs |

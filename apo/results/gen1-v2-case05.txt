@@ -1,0 +1,7 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Absolute Rules | 3-9 | MOVE_HOOK | Hard constraints (NEVER rm -rf, NEVER push to main, ALWAYS run tests) should be PreToolUse hooks |
+| Architecture | 11-15 | KEEP | Strategic architectural context (microservices, RabbitMQ endpoints, event-driven patterns) cannot be discovered from code alone |
+| Naming | 17-21 | KEEP | Team-specific naming conventions are non-obvious organizational knowledge |
+| Monitoring | 23-27 | KEEP | Cross-service constraints essential for compliance with monitoring standards |
+| DO NOT TOUCH | 29-33 | MOVE_HOOK | File protection rules should be PreToolUse hooks blocking Edit/Write on auto-generated paths |

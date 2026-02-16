@@ -1,0 +1,47 @@
+{
+  "case_id": "case-02-mixed-quality",
+  "description": "Mix of valuable team-specific info and generic advice. Tests ability to distinguish.",
+  "total_lines": 32,
+  "sections": [
+    {
+      "name": "Team Convention: Branch Naming",
+      "verdict": "KEEP",
+      "reason": "Team-specific convention with JIRA project key. Model cannot infer this."
+    },
+    {
+      "name": "Never Modify Legacy API",
+      "verdict": "MOVE_HOOK",
+      "reason": "Hard constraint with compliance implications. Should be a PreToolUse hook blocking edits to src/payments/v1/"
+    },
+    {
+      "name": "Database",
+      "verdict": "TRIM",
+      "reason": "PostgreSQL 15 preference is worth keeping (1 line). The rest is generic DB advice the model knows."
+    },
+    {
+      "name": "Testing",
+      "verdict": "REMOVE",
+      "reason": "Generic testing advice. Framework choices (Jest/pytest) are discoverable from package.json/pyproject.toml."
+    },
+    {
+      "name": "Secrets Management",
+      "verdict": "KEEP",
+      "reason": "Team-specific access pattern and AWS region. Not inferable. The NEVER rules could also become hooks."
+    },
+    {
+      "name": "Internal Services",
+      "verdict": "KEEP",
+      "reason": "Team-specific URLs and service names. Not discoverable from code alone."
+    },
+    {
+      "name": "Performance",
+      "verdict": "REMOVE",
+      "reason": "Generic web performance advice the model already knows"
+    }
+  ],
+  "expected_keep_count": 3,
+  "expected_remove_count": 2,
+  "expected_move_count": 1,
+  "expected_trim_count": 1,
+  "ideal_remaining_lines": "12-18"
+}

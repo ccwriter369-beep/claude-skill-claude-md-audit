@@ -1,0 +1,10 @@
+| Section | Lines | Verdict | Reason |
+|---------|-------|---------|--------|
+| Code Style | 3-8 | REMOVE | Model already knows const vs let, arrow functions, async/await, template literals, and semicolon conventions |
+| Security | 10-15 | REMOVE | Stack trace handling, input sanitization, HTTPS, bcrypt, JWT validation are security fundamentals the model knows |
+| Git Workflow | 17-22 | REMOVE | Force push restrictions, feature branches, meaningful commits, running tests are standard Git best practices |
+| My Project Structure | 24-29 | KEEP | Directory structure is project-specific organizational knowledge not discoverable without reading code |
+| Debugging | 31-36 | REMOVE | Reading error messages, checking logs, reproducing issues are debugging fundamentals the model knows |
+| Python Preferences | 38-43 | REMOVE | Type hints, pathlib, dataclasses, virtual environments, black, ruff are standard Python best practices |
+| Deployment | 45-50 | REMOVE | Running migrations, health checks, error rate thresholds are standard deployment practices |
+| API Design | 52-57 | REMOVE | REST conventions, HTTP status codes, pagination, /v1/ versioning, OpenAPI are industry-standard patterns |
